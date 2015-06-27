@@ -1,0 +1,17 @@
+{
+  "name": "JosephMaxwell/DesignPatterns",
+  "description": "Design Pattern Discussion",
+  "minimum-stability": "stable",
+  "license": "none",
+  "authors": [
+    {
+      "name": "Joseph Maxwell",
+      "email": "joseph@swiftotter.com"
+    }
+  ],
+  "require": {
+    "symfony/yaml": "^2.7",
+    "phpunit/phpunit": "^4.7",
+    "aura/autoload": "^2.0"
+  }
+}

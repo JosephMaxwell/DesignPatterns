@@ -1,0 +1,10 @@
+products:
+  simple:
+    name: Simple Product
+    class: \ShoppingCart\Model\Product\Simple
+  child_selector:
+    name: Child Selector Product
+    class: \ShoppingCart\Model\Product\ChildSelector
+  bundle:
+    name: Bundle Product
+    class: \ShoppingCart\Model\Product\Bundle
