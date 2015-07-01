@@ -1,6 +1,10 @@
 <?php
 namespace ShoppingCart\Model\Product;
 
+use ShoppingCart\Model\Product\Simple as SimpleProduct;
+use ShoppingCart\Model\Product\ChildSelect as ChildSelectProduct;
+use ShoppingCart\Model\Product\Bundle as BundleProduct;
+
 use Symfony\Component\Yaml\Parser;
 use ShoppingCart\Model\ProductInterface;
 
@@ -37,5 +41,3 @@ class Factory
         return $output;
     }
 }
-
-$model = Mage::getModel('JosephMaxwell_Module/ModelClass');

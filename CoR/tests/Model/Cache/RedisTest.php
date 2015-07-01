@@ -29,14 +29,14 @@ class RedisTest extends \PHPUnit_Framework_TestCase
         ));
         /** @var Redis $redis */
         $redis = $this->getMock('ShoppingCart\Model\Cache\Redis', array('getDataFor'));
-        $redis->expects($this->any())->method('getDataFor')->will();
+        $redis->expects($this->any())->method('getDataFor')->will($redisMap);
 
         $dbMap = $this->returnValueMap(array(
             array('db', 'db_result')
         ));
         /** @var Db $db */
         $db = $this->getMock('ShoppingCart\Model\Cache\Db', array('getDataFor'));
-        $db->expects($this->any())->method('getDataFor')->will();
+        $db->expects($this->any())->method('getDataFor')->will($dbMap);
 
         $redis->append($db);
 
