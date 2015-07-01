@@ -17,7 +17,7 @@ class Singleton
         return self::$_instance;
     }
 
-    public function __construct()
+    protected function __construct()
     {
         session_start();
         $this->_createTime = time();

@@ -3,6 +3,7 @@ namespace ShoppingCart\Model\Cache;
 
 abstract class Base
 {
+    /** @var Base $_successor  */
     protected $_successor;
     protected $_result;
     protected $_data;
@@ -34,7 +35,7 @@ abstract class Base
         return $request->getResult();
     }
 
-    public function processing(Request $request)
+    public function processing($request)
     {
         $key = $request->getKey();
         $value = $this->getDataFor($key);

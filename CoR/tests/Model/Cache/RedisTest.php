@@ -24,17 +24,19 @@ class RedisTest extends \PHPUnit_Framework_TestCase
 
     public function testHandle()
     {
+        $redisMap = $this->returnValueMap(array(
+            array('redis', 'redis_result')
+        ));
         /** @var Redis $redis */
         $redis = $this->getMock('ShoppingCart\Model\Cache\Redis', array('getDataFor'));
-        $redis->expects($this->any())->method('getDataFor')->will($this->returnValueMap(array(
-            array('redis', 'redis_result')
-        )));
+        $redis->expects($this->any())->method('getDataFor')->will();
 
+        $dbMap = $this->returnValueMap(array(
+            array('db', 'db_result')
+        ));
         /** @var Db $db */
         $db = $this->getMock('ShoppingCart\Model\Cache\Db', array('getDataFor'));
-        $db->expects($this->any())->method('getDataFor')->will($this->returnValueMap(array(
-            array('db', 'db_result')
-        )));
+        $db->expects($this->any())->method('getDataFor')->will();
 
         $redis->append($db);
 

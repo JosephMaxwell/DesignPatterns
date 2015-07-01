@@ -14,13 +14,13 @@ class CoR
         $this->_cache = $cache;
     }
 
-    public function get()
+    public function get($key)
     {
-        return $this->_cache->get('memcached');
+        return $this->_cache->get($key);
     }
 }
 
 $cache = new Cache();
 $app = new CoR($cache);
 
-echo $app->get();
+echo $app->get('memcached');

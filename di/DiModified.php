@@ -4,7 +4,7 @@ namespace ShoppingCart;
 use ShoppingCart\Model\Session\Singleton as Session;
 include '../src/Autoloader.php';
 
-class Modified
+class DiModified
 {
     public function getSession()
     {
@@ -12,7 +12,7 @@ class Modified
     }
 }
 
-$app = new Modified();
+$app = new DiModified();
 echo sprintf("First Query: %s<br/>", $app->getSession()->getCreatedTime());
 sleep(2);
 echo sprintf("Last Query: %s", $app->getSession()->getCreatedTime());
